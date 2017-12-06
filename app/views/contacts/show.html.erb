@@ -1,0 +1,28 @@
+<div class="basic-grey">
+  <p id="notice"><%= notice %></p>
+  
+ <h1><%= @contacts.model.model_name.human(count: @contacts.count) %></h1>
+
+  <p>
+    <strong><%= @contacts.model.human_attribute_name("name") %> :</strong>
+    <%= @contact.name %>
+  </p>
+
+  <p>
+    <strong><%= @contacts.model.human_attribute_name("email") %> : </strong>
+    <%= @contact.email %>
+  </p>
+
+  <p>
+    <strong><%= @contacts.model.human_attribute_name("kind")%> :</strong>
+    <%= @contact.kind.description %>
+  </p>
+
+  <p>
+    <strong><%= @contacts.model.human_attribute_name("rmk") %> :</strong>
+    <%= @contact.rmk %>
+  </p>
+</div>
+
+<%= link_to t('buttons.edit'), edit_contact_path(@contact) %> |
+<%= link_to t('buttons.back'), contacts_path %>

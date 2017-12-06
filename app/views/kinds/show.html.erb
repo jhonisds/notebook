@@ -1,0 +1,13 @@
+<div class="basic-grey">
+  <p id="notice"><%= notice %></p>
+  
+  <h1><%= @kinds.model.model_name.human(count: @kinds.count) %></h1>
+  
+  <p>
+    <strong><%= @kinds.model.human_attribute_name("description") %> :</strong>
+    <%= @kind.description %>
+  </p>
+</div>
+
+<%= link_to t('buttons.edit'), edit_kind_path(@kind) %> |
+<%= link_to t('buttons.back'), kinds_path %>

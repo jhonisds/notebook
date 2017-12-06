@@ -1,0 +1,9 @@
+"pt-BR":
+  buttons:
+    new: Novo
+    show: Exibir
+    edit: Alterar
+    destroy: Excluir
+    home: Home
+    back: Voltar
+    save: Salvar
