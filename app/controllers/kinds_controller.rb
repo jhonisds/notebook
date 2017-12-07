@@ -1,10 +1,11 @@
 class KindsController < ApplicationController
   before_action :set_kind, only: [:show, :edit, :update, :destroy]
+  http_basic_authenticate_with name: "jhoni", password: "123", only: :update
 
   # GET /kinds
   # GET /kinds.json
   def index
-    @kinds = Kind.all
+    @kinds = Kind.order(:description).page(params[:page]).per(10)
   end
 
   # GET /kinds/1
@@ -29,7 +30,7 @@ class KindsController < ApplicationController
 
     respond_to do |format|
       if @kind.save
-        format.html { redirect_to @kind, notice: 'Kind was successfully created.' }
+        format.html { redirect_to kinds_path, notice: I18n.t('messages.created') }
         format.json { render :show, status: :created, location: @kind }
       else
         format.html { render :new }
@@ -43,7 +44,7 @@ class KindsController < ApplicationController
   def update
     respond_to do |format|
       if @kind.update(kind_params)
-        format.html { redirect_to @kind, notice: 'Kind was successfully updated.' }
+        format.html { redirect_to kinds_path, notice: I18n.t('messages.updated')  }
         format.json { render :show, status: :ok, location: @kind }
       else
         format.html { render :edit }
@@ -57,7 +58,7 @@ class KindsController < ApplicationController
   def destroy
     @kind.destroy
     respond_to do |format|
-      format.html { redirect_to kinds_url, notice: 'Kind was successfully destroyed.' }
+      format.html { redirect_to kinds_path, notice: I18n.t('messages.destroyed')  }
       format.json { head :no_content }
     end
   end

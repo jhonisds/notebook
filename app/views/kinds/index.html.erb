@@ -1,8 +1,8 @@
 <div class="basic-grey">
     
-   <script>
+  <script>
     $.notify("<%= notice %>", "success") 
-  </script>  
+  </script>
   
   <h1> <%= "#{t('messages.listing')} #{@kinds.model.model_name.human(count: @kinds.count)}" %></h1>
 
@@ -24,11 +24,13 @@
       <% end %>
     </tbody>
   </table>
-
+  
+  </br>
+   <%= paginate @kinds %> 
   <br>
 
-  <%= link_to t('buttons.new'), new_kind_path,  class:"btn btn-primary"  %>
+  <%= link_to t('buttons.new'), new_kind_path, class:"btn btn-primary"  %>
   <%= link_to t('buttons.home'), root_path, class:"btn btn-success"%>
-</div>  
 
+</div>  
 
