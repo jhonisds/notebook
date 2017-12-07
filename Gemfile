@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "2.1.2"
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -23,8 +24,6 @@ gem 'cocoon'
 gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 # A library for generating fake data such as names, addresses, and phone numbers.
 gem 'faker'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -46,7 +45,16 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 # Rails >= 3 pry initializer
-gem 'pry-rails' 
+gem 'pry-rails'
+# Use sqlite3 as the database for Active Record
+gem 'sqlite3',  group: :development
+
+group :production do
+  #Heroku dependency
+  gem 'pg'
+  #Heroku dependency
+  gem 'rails_12factor'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
