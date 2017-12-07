@@ -31,7 +31,7 @@ module ApplicationHelper
   ]
   
 def ruby_version
-   "Ruby version: 2.1.2"
+   "Ruby version: 2.3.1"
 end
   
 def rails_version
