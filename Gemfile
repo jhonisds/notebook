@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby "2.3.1"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.6'
+gem 'rails', '4.2.5'
 # blundler
 gem 'bundler', '>= 1.8.4'
 #rails-assets
